@@ -1,0 +1,93 @@
+<div class="container">
+
+    <div class="head">
+        <span><span class="head__mainSpan"> Main </span> | Knowledge Center</span>
+        <h1 class="head__title">Knowledge Center</h1>
+        <hr class="head__line">
+    </div>
+    <div class="top5">
+        <div id="carouselId" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators" id="carousel-slider">
+              <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselId" data-slide-to="1"></li>
+              <li data-target="#carouselId" data-slide-to="2"></li>
+              <li data-target="#carouselId" data-slide-to="3"></li>
+              <li data-target="#carouselId" data-slide-to="4"></li>
+            </ul>
+          
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="top5__article">
+                    <h3 class="top5__article__header">{{top5_articles[0].title}}</h3>
+                    <p>{{top5_articles[0].body}}</p>
+                    <a  class="btn top5__article__moreDetails" routerLink="/article/1">More Details</a>
+                    <a href="#allArticls" class="btn top5__article__allArticles">All Articles</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="top5__article">
+                    <h3 class="top5__article__header">{{top5_articles[1].title}}</h3>
+                    <p>{{top5_articles[1].body}}</p>
+                    <a class="btn top5__article__moreDetails" routerLink="/article/2">More Details</a>
+                    <a href="#allArticls" class="btn top5__article__allArticles">All Articles</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="top5__article">
+                    <h3 class="top5__article__header">{{top5_articles[2].title}}</h3>
+                    <p>{{top5_articles[2].body}}</p>
+                    <a class="btn top5__article__moreDetails" routerLink="/article/3">More Details</a>
+                    <a href="#allArticls" class="btn top5__article__allArticles" >All Articles</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="top5__article">
+                    <h3 class="top5__article__header">{{top5_articles[3].title}}</h3>
+                    <p>{{top5_articles[3].body}}</p>
+                    <a class="btn top5__article__moreDetails" routerLink="/article/4">More Details</a>
+                    <a href="#allArticls" class="btn top5__article__allArticles" >All Articles</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="top5__article">
+                    <h3 class="top5__article__header">{{top5_articles[4].title}}</h3>
+                    <p>{{top5_articles[4].body}}</p>
+                    <a class="btn top5__article__moreDetails" routerLink="/article/5">More Details</a>
+                    <a href="#allArticls" class="btn top5__article__allArticles" >All Articles</a>
+                </div>
+              </div>
+            </div>
+        </div>
+          
+
+    </div>
+
+    <div class="search" dir="rtl">
+      <div>
+      <input type="text" placeholder="اكتب ما تبحث عنه" dir="rtl" [(ngModel)]="search_text">
+      <button class="search__btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    </div>
+
+<div class="allArticles" id='allArticls'>
+    <div *ngFor='let article of all_articles' > 
+      <ng-template [ngIf]="article.title.includes(search_text)">
+        <a class="allArticles__article__link" routerLink="/article/{{article.id}}">
+          <img class="img-responsive" src="../../assets/images/Capture.png" alt="Article Picture">
+          <h5>{{article.title}}</h5>
+        </a>
+      </ng-template>
+    </div>
+</div>
+
+<div class="socialMedia">
+  <a href="#">
+    <img class="img-responsive" src="../../assets/images/share.png">
+  </a>
+</div>
+</div>

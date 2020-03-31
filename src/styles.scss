@@ -1,0 +1,188 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@font-face { font-family: 'SSTArabic-Roman';
+     src: url('./assets/fonts/SSTArabic-Roman/SSTArabic-Roman.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/SSTArabic-Roman/SSTArabic-Roman.woff') format('woff'),
+       url('./assets/fonts/SSTArabic-Roman/SSTArabic-Roman.ttf') format('truetype'),
+        url('./assets/fonts/SSTArabic-Roman/SSTArabic-Roman.svg#SSTArabic-Roman') format('svg');
+         font-weight: normal; font-style: normal; }
+
+$primary: #FFFFFF;
+@mixin backgroundColor_opacity($color,$alpha) {
+    background-color: rgba($color: $color, $alpha: $alpha);
+}
+*{
+    margin: 0;
+    color: $primary;
+    font-size: 1.2vw;
+    box-sizing: border-box;
+    font-family: 'SSTArabic-Roman';
+}
+header{
+    background-image: url('./assets/images/7CS72U5SUBF2VD7IDXOCSIQVK4.png');
+    background-size: cover;
+    color: #FFFFFF;
+    
+    flex-grow: initial;
+    padding-bottom: 6vh;
+    nav{
+        margin:0 !important;
+        padding: 0 !important;
+        .nav-item{
+            width: auto;
+            padding: 1.2vh;
+        }
+        .nav-link{
+            color:$primary !important;
+        }
+        
+    }
+    
+    .flex{
+        width:80%;
+        margin:0 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border-bottom: 0.05em solid rgba($color: $primary, $alpha: 0.5);
+    }
+    .flex__navList li {
+        padding: 2vh;
+        text-align: center;
+        &:hover{
+            @include backgroundColor_opacity($primary,0.5 );
+            cursor: pointer;
+        }
+    }
+    .flex__navList li a{
+        
+        color: $primary;
+        &:hover{
+            text-decoration: none;
+            color: $primary;
+        }
+        
+    }
+    .flex--opacity{
+        @include backgroundColor_opacity($primary,0.1 )
+    }
+    .flex__KnowledgeCenter{
+        width: 23%;
+        background-color: #004977;
+        &:hover{
+            @include backgroundColor_opacity(#004977,0.8 )
+        }
+    }
+    .flex__Eservice{
+        width: 19%;
+        background-color: #14A99B;
+        &:hover{
+            @include backgroundColor_opacity(#14A99B,0.8 )
+        }
+    }
+    .dropdown .dropdown-menu{
+        background-color: rgb(58, 58, 173);
+    }
+    .flex__dropdownButton{
+        background: none;
+        outline: none !important;
+        border: none;
+    }
+    .flex___BarSearch{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        
+        .flex__Bar{
+            width: 20%;
+            padding: 2vh;
+            
+        }
+        .flex__Search{
+            width: 80%;
+            padding: 2vh;
+            
+            .flex__search__input{
+                color: gray;
+                width: 100%;
+            }
+        }
+    }
+}
+
+footer{
+    background-color: #003D64;
+    border-top: 3px solid #14A99B ;   
+}
+.footer{
+    width:100%;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: 100%;
+    grid-template-areas: 'b1 b2 b3';
+    padding-top: 8vh;
+    
+    .footer__block1{
+        grid-area: b1;
+        align-items: center;
+        img{
+            margin-top: 2vh;
+            width: 4vw;
+            height: auto;
+        }
+    }
+    .footer__block2{
+        grid-area: b2;
+        align-items: center;
+        
+        .footer__block2__img img{
+            width: 55%;
+            height: auto;
+        }
+        .footer__block2__img:first-child{
+            margin-bottom: 18%;
+        }
+        .footer__block2__paragraph {
+            margin-top: 5%;
+            font-size: 80%;
+            margin-left: 1.2vw;
+        }
+    }
+    .footer__block3{
+        grid-area: b3;
+        .footer__block3__form{
+            display: inline-block;
+            border-radius: 0.4vw;
+            padding: 0.6vh 0.5vw;
+            border: 1px solid rgba($color: $primary, $alpha: 0.3);
+            input{
+                background-color: transparent;
+                border: none;
+                &:focus{
+                    outline: none;
+                }
+                &::placeholder{
+                    color: $primary;
+                    opacity: 0.8;
+                }
+            }
+            button{
+                background-color: #14A99B;
+            }
+        }
+
+    }
+    .footer__block__icon{
+        padding: 0.8vh 0.8vw;
+        margin: 0.3vh 0.4vw;
+        border: 1px solid rgba($color: $primary, $alpha: 0.5);
+        border-radius: 0.4vw;
+    }
+}
+@media only screen and (max-width: 768px)  {
+    
+     /*768 portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+}
