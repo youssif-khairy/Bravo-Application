@@ -26,12 +26,7 @@ export class ArticleDetailsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    /* this.c = new CommentModule();
-    this.c.id = '1';
-    this.c.postId = '15';
-    this.c.name = 'neka';
-    this.c.email = 'sha5awya@yahoo.com';
-    this.c.body = 'asfk ndf mnf nf dfsdf fdsf'; */
+
     this.http.get_article_by_id(this.id).subscribe(data => {this.article = data;})
     this.http.get_comments_for_article(this.id).subscribe(data =>{this.comments = data; })
   }
